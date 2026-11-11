@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SiKenDin</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <style>
 :root{--bg:#f3f6f5;--card:#fff;--ink:#16292c;--mut:#5f7377;--line:#d5dfde;--pri:#0f6b68;--warn:#a8650a;--warnbg:#fbefd9;--bad:#a72f27;--badbg:#f8e0dd;--ok:#1d6b3a;--okbg:#dff1e5}
 *{box-sizing:border-box}
@@ -60,11 +61,11 @@ img:not([src]){visibility:hidden}
 </style>
 </head>
 <body>
-<header><div><h1>SiKenDin</h1><p>Kendaraan dinas · Poltekkes Kemenkes Jayapura</p></div><div style="text-align:right"><p id="who"></p><button class="b g" style="padding:4px 10px" onclick="init()">Muat ulang</button><button class="b g" style="padding:4px 10px;margin-left:4px" onclick="$('#pw').hidden=false">Ganti sandi</button><button class="b g" style="padding:4px 10px;margin-left:4px" onclick="logout()">Keluar</button></div></header>
+<header><div style="display:flex;gap:10px;align-items:center"><img src="logo.svg" alt="Logo SiKenDin" width="44" height="44" onerror="this.remove()"><div><h1>SiKenDin</h1><p>Kendaraan dinas · Poltekkes Kemenkes Jayapura</p></div></div><div style="text-align:right"><p id="who"></p><button class="b g" style="padding:4px 10px" onclick="init()">Muat ulang</button><button class="b g" style="padding:4px 10px;margin-left:4px" onclick="$('#pw').hidden=false">Ganti sandi</button><button class="b g" style="padding:4px 10px;margin-left:4px" onclick="logout()">Keluar</button></div></header>
 <nav id="nav"></nav>
 <main id="m"></main>
 <section id="ba" hidden></section>
-<div id="login" hidden onkeydown="if(event.key==='Enter')doLogin()"><h2>SiKenDin</h2><p>Masuk dengan username dan kata sandi dari admin.</p><input id="lu" placeholder="Username" autocomplete="username" autocapitalize="none" style="max-width:300px;width:100%"><input id="lp" type="password" placeholder="Kata sandi" autocomplete="current-password" style="max-width:300px;width:100%"><button class="b" id="lbtn" style="max-width:300px;width:100%" onclick="doLogin()">Masuk</button><p id="lmsg"></p></div>
+<div id="login" hidden onkeydown="if(event.key==='Enter')doLogin()"><img src="logo.svg" alt="Logo SiKenDin" width="96" height="96" onerror="this.remove()"><h2>SiKenDin</h2><p>Masuk dengan username dan kata sandi dari admin.</p><input id="lu" placeholder="Username" autocomplete="username" autocapitalize="none" style="max-width:300px;width:100%"><input id="lp" type="password" placeholder="Kata sandi" autocomplete="current-password" style="max-width:300px;width:100%"><button class="b" id="lbtn" style="max-width:300px;width:100%" onclick="doLogin()">Masuk</button><p id="lmsg"></p></div>
 <div id="pw" hidden class="ov" onkeydown="if(event.key==='Enter')doPw()"><h2>Ganti kata sandi</h2><input id="pw1" type="password" placeholder="Kata sandi lama" autocomplete="current-password" style="max-width:300px;width:100%"><input id="pw2" type="password" placeholder="Kata sandi baru (min. 8 karakter)" autocomplete="new-password" style="max-width:300px;width:100%"><div style="display:flex;gap:8px"><button class="b" onclick="doPw()">Simpan</button><button class="b g" onclick="$('#pw').hidden=true">Batal</button></div><p id="pmsg"></p></div>
 <div id="busy" hidden><span id="bt">Memuat…</span></div>
 <script>
